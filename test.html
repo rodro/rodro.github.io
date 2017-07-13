@@ -5,9 +5,17 @@
 body {
     font-family: "Lato", sans-serif;
 }
-
+.floating-menu {
+    font-family: sans-serif;
+    background: white;
+    padding: 2px;;
+    width: 110px;
+    height: 70;
+    z-index: 0;
+    position: fixed;
+  }
 .sidenav {
-    height: 100%;
+    height: 70%;
     width: 0;
     position: fixed;
     z-index: 1;
@@ -42,7 +50,7 @@ body {
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
+    padding: 0px;
 }
 
 @media screen and (max-height: 450px) {
@@ -61,11 +69,20 @@ body {
   <a href="#">Contact</a>
 </div>
 
-<div id="main">
-  <h2>Sidenav Push Example</h2>
-  <p>Click on the element below to open the side navigation menu, and push this content to the right.</p>
-  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+<div id="main" class="floating-menu">
+
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
 </div>
+
+<h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus euismod metus, sed lobortis metus. Curabitur a felis eu orci iaculis venenatis vitae eu est. Phasellus vel aliquam nunc, fermentum volutpat magna. Quisque et bibendum neque, in malesuada ante. Vivamus ac arcu ac orci maximus posuere. Vivamus sit amet laoreet elit. Sed sit amet libero vel justo condimentum rhoncus. Nunc commodo neque sit amet tempus ultrices. Vestibulum eu tincidunt mauris. Maecenas dapibus neque id arcu lobortis, non varius ex auctor. Curabitur sit amet aliquam mauris. Aenean tempor tortor id luctus gravida. Nunc dictum aliquet lectus, non pellentesque magna ultrices id.
+
+Vestibulum vel libero egestas, consectetur velit sed, dictum ante. Nunc nisl velit, dignissim rutrum consequat eget, viverra et purus. Cras vulputate et massa luctus volutpat. Sed condimentum luctus eros at congue. Mauris auctor nunc elit, vitae scelerisque libero viverra at. Vivamus eu posuere mi. Duis dignissim turpis nec dolor varius porta. Praesent elementum dolor placerat, placerat metus ac, dictum magna. Nunc lectus magna, malesuada quis varius sed, facilisis et est. Nullam sem nulla, egestas aliquet pretium pulvinar, vehicula non mauris. Nullam egestas sapien magna, sit amet imperdiet urna convallis nec. In eu rhoncus ipsum. Suspendisse potenti. Suspendisse hendrerit aliquet nunc, non aliquam enim efficitur ut. Nunc congue risus sed semper accumsan.
+
+Phasellus consequat nunc quis sem tristique, fermentum laoreet felis vehicula. Sed id ligula fermentum, interdum ipsum ac, rhoncus urna. In luctus ligula ac nunc interdum luctus. Donec laoreet tellus orci, sed aliquam velit feugiat eu. Morbi sit amet dignissim urna. Suspendisse fermentum vitae felis mollis semper. Cras et scelerisque lectus, sit amet tristique ipsum. Sed finibus, ipsum quis porta tristique, purus felis convallis nibh, nec malesuada enim ante ut ex. In fermentum velit urna, id imperdiet sem dictum ut. Phasellus convallis tortor vitae dui faucibus, sed semper libero finibus. Vivamus eget est ullamcorper, pulvinar mauris eget, congue mi. Maecenas a nisl at ipsum pulvinar rhoncus et sed velit.
+
+Sed aliquam quis orci sit amet convallis. Proin nec eleifend mauris. Nulla aliquam sapien sed purus interdum, a bibendum risus mollis. Vestibulum ullamcorper justo eu tortor fermentum tempus. Nam eget mattis felis, ut pulvinar massa. Vestibulum sollicitudin facilisis mauris a efficitur. Vestibulum pretium libero at tellus tristique pharetra sed eu lectus. Praesent metus ligula, tempus nec urna a, lacinia posuere leo. Sed non felis a massa fermentum elementum. Suspendisse vel pellentesque nisi, quis ornare leo. Nunc a nibh mauris. Praesent facilisis purus quam. Phasellus ante mauris, lobortis ut congue a, condimentum ut nulla.
+
+Sed nibh metus, commodo eget convallis sit amet, dignissim at ex. Quisque felis nulla, vehicula ac erat consequat, malesuada aliquam nibh. Donec libero nulla, cursus eget feugiat at, tempus tempus diam. Maecenas quis enim libero. Vestibulum ornare, magna ac finibus sodales, purus mauris lacinia neque, ac pellentesque massa urna nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ullamcorper dolor ut ultrices suscipit. Nam sed ligula rhoncus, sagittis eros in, sodales elit. Ut vestibulum lacus non facilisis pharetra.</h3>
 
 <script>
 function openNav() {
@@ -80,4 +97,6 @@ function closeNav() {
 </script>
 
 </body>
+
+
 </html>
