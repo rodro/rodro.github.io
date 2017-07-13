@@ -16,22 +16,22 @@ body, html {
 
 }
 .bgimg-1 {
-  background-image: url("/img/4B.png");
+  background-image: url("img/4B.PNG");
   min-height: 100%;
 }
 
 .bgimg-2 {
-  background-image: url("/img/5.png");
-  min-height: 100%;
+  background-image: url("img/5.PNG");
+  min-height: 400px;
 }
 
 .bgimg-3 {
-  background-image: url("/img/6.png");
-  min-height: 100%;
+  background-image: url("img/6.png");
+  min-height: 400px;
 }
 
 .bgimg-4 {
-  background-image: url("/img/7.png");
+  background-image: url("img/7.png");
   min-height: 100%;
 }
 
