@@ -1,0 +1,18 @@
+#hamburger-icon {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+  div {
+    width: 25px;
+    height: 5px;
+    background-color: #1e73be;
+    margin: 0 0 6px;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  &:hover div {
+    background-color: #0f3658;
+  }
+}
