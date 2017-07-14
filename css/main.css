@@ -64,6 +64,8 @@ body {
     width: 130px;
     z-index: 1;
     position: fixed;
+    opacity: 0.5;
+
   }
 
 .sidenav {
@@ -77,6 +79,7 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    opacity: 0.75;
 }
 
 .sidenav a {
