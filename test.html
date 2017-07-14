@@ -1,7 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
+
+header {
+	height: 400px;
+	background-image: url('https://images.pexels.com/photos/162947/coffee-glass-beverage-coffee-mug-162947.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	.header-caption {
+		padding: 0 20%;
+	}
+	h1 {
+		margin: 0;
+		font-size: 60px;
+		color: #fff;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 24px;
+		color: #fff;
+	}
+}
+
+
+/*---------------------*/
 body {
     font-family: "Lato", sans-serif;
 }
@@ -60,6 +90,12 @@ body {
 </style>
 </head>
 <body>
+  <header data-speed="3">
+  	<div class="header-caption2">
+  		<h1>Lorem ipsum dolor</h1>
+  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus velit atque alias aliquid provident sed!</p>
+  	</div>
+  </header>
 
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -85,6 +121,28 @@ Sed aliquam quis orci sit amet convallis. Proin nec eleifend mauris. Nulla aliqu
 Sed nibh metus, commodo eget convallis sit amet, dignissim at ex. Quisque felis nulla, vehicula ac erat consequat, malesuada aliquam nibh. Donec libero nulla, cursus eget feugiat at, tempus tempus diam. Maecenas quis enim libero. Vestibulum ornare, magna ac finibus sodales, purus mauris lacinia neque, ac pellentesque massa urna nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ullamcorper dolor ut ultrices suscipit. Nam sed ligula rhoncus, sagittis eros in, sodales elit. Ut vestibulum lacus non facilisis pharetra.</h3>
 
 <script>
+
+// Heading Transition
+	(function() {s
+		var header = $('.header-caption2');
+		var range = 200;
+		$(window).on('scroll', function () {
+			var scrollTop = $(this).scrollTop();
+			var offset = header.offset().top;
+			var height = header.outerHeight();
+			offset = offset + height / 2;
+			var calc = 1 - (scrollTop - offset + range) / range;
+			header.css({opacity: calc});
+			if (calc > '1') {
+				header.css({opacity: 1});
+			} else if (calc < '0') {
+				header.css({opacity: 0});
+			}
+		});
+	}());
+
+
+
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";

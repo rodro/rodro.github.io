@@ -1,11 +1,40 @@
 
+/*header {
+	height: 400px;
+	background-image: url('https://images.pexels.com/photos/162947/coffee-glass-beverage-coffee-mug-162947.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	.header-caption {
+		padding: 0 20%;
+	}*/
+	/*h1 {
+		margin: 0;
+		font-size: 60px;
+		color: #000;
+		text-transform: uppercase;
+	}
+	p {
+		font-size: 24px;
+		color: #000;
+	}
+}*/
+
+
+/*----------------*/
+
 body {
     font-family: "Lato", sans-serif;
 }
 
 .floating-menu {
     font-family: sans-serif;
-    background: white;
+    background: rgba(255,255,255,0.3);
     padding: 5px;;
     width: 130px;
     z-index: 1;
@@ -67,14 +96,15 @@ body, html {
   position: relative;
   opacity: 0.65;
   background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
 }
 .bgimg-1 {
-  background-image: url("/img/4B.png");
-  min-height: 400px;
+  background-image: url("/img/header.jpg");
+  background-position: 50% -400px;
+  padding-top: 300px;
+
 }
 
 .bgimg-2 {
@@ -99,14 +129,18 @@ body, html {
   width: 100%;
   text-align: center;
   color: #000;
+
 }
 
-.caption span.border {
-  background-color: #111;
+/*.caption span.*/
+  .border {
+  background-color: #f05f40;
   color: #fff;
   padding: 18px;
   font-size: 25px;
   letter-spacing: 10px;
+  z-index: -40;
+
 }
 
 h3 {
