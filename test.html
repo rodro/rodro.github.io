@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script> -->
 <style>
+/*......................................*/
+/*..............gallerry...............*/
+#heart {
+  color: #f77;
+}
 
+img:hover {
+  cursor: pointer;
+}
+/*..............gallerry...............*/
+/*.................................*/
 header {
 	height: 400px;
 	background-image: url('https://images.pexels.com/photos/162947/coffee-glass-beverage-coffee-mug-162947.jpeg?w=940&h=650&auto=compress&cs=tinysrgb');
@@ -109,7 +121,33 @@ body {
 
   <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; menu</span>
 </div>
+<!-- ................................ -->
+<!-- ..........gallery....... -->
+<section class="w3-content w3-container w3-padding-64">
+<h1 class="w3-center">My Photo Gallery</h1>
+<p class="w3-center"><em>Click on the images to make them bigger</em></p>
 
+<!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+<div class="w3-row-padding w3-center" appml-data="images">
+
+  <div class="w3-col m4 w3-padding-16" appml-repeat="image">
+    <img src="{{src}}" alt="alt" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+  </div>
+
+</div>
+</section>
+<!-- End Container (Projects) -->
+
+<!-- Modal for full size images on click-->
+<div id="modal" class="w3-modal w3-black" onclick="this.style.display='none'">
+<span class="w3-closebtn w3-hover-red w3-text-white w3-xxxlarge w3-container w3-display-topright">×</span>
+<div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+  <img id="img" style="max-width:100%">
+</div>
+</div>
+
+<!-- ..........gallery....... -->
+<!-- ........................ -->
 <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus euismod metus, sed lobortis metus. Curabitur a felis eu orci iaculis venenatis vitae eu est. Phasellus vel aliquam nunc, fermentum volutpat magna. Quisque et bibendum neque, in malesuada ante. Vivamus ac arcu ac orci maximus posuere. Vivamus sit amet laoreet elit. Sed sit amet libero vel justo condimentum rhoncus. Nunc commodo neque sit amet tempus ultrices. Vestibulum eu tincidunt mauris. Maecenas dapibus neque id arcu lobortis, non varius ex auctor. Curabitur sit amet aliquam mauris. Aenean tempor tortor id luctus gravida. Nunc dictum aliquet lectus, non pellentesque magna ultrices id.
 
 Vestibulum vel libero egestas, consectetur velit sed, dictum ante. Nunc nisl velit, dignissim rutrum consequat eget, viverra et purus. Cras vulputate et massa luctus volutpat. Sed condimentum luctus eros at congue. Mauris auctor nunc elit, vitae scelerisque libero viverra at. Vivamus eu posuere mi. Duis dignissim turpis nec dolor varius porta. Praesent elementum dolor placerat, placerat metus ac, dictum magna. Nunc lectus magna, malesuada quis varius sed, facilisis et est. Nullam sem nulla, egestas aliquet pretium pulvinar, vehicula non mauris. Nullam egestas sapien magna, sit amet imperdiet urna convallis nec. In eu rhoncus ipsum. Suspendisse potenti. Suspendisse hendrerit aliquet nunc, non aliquam enim efficitur ut. Nunc congue risus sed semper accumsan.
@@ -120,26 +158,9 @@ Sed aliquam quis orci sit amet convallis. Proin nec eleifend mauris. Nulla aliqu
 
 Sed nibh metus, commodo eget convallis sit amet, dignissim at ex. Quisque felis nulla, vehicula ac erat consequat, malesuada aliquam nibh. Donec libero nulla, cursus eget feugiat at, tempus tempus diam. Maecenas quis enim libero. Vestibulum ornare, magna ac finibus sodales, purus mauris lacinia neque, ac pellentesque massa urna nec neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean ullamcorper dolor ut ultrices suscipit. Nam sed ligula rhoncus, sagittis eros in, sodales elit. Ut vestibulum lacus non facilisis pharetra.</h3>
 
-<script>
+<script type="text/javascript">
 
-// Heading Transition
-	(function() {s
-		var header = $('.header-caption2');
-		var range = 200;
-		$(window).on('scroll', function () {
-			var scrollTop = $(this).scrollTop();
-			var offset = header.offset().top;
-			var height = header.outerHeight();
-			offset = offset + height / 2;
-			var calc = 1 - (scrollTop - offset + range) / range;
-			header.css({opacity: calc});
-			if (calc > '1') {
-				header.css({opacity: 1});
-			} else if (calc < '0') {
-				header.css({opacity: 0});
-			}
-		});
-	}());
+
 
 
 
@@ -152,6 +173,33 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft= "0";
 }
+
+/*......................................*/
+/*..............gallerry...............*/
+
+var images = {
+  image: [
+    {src: 'https://unsplash.it/400/301?random', alt: 'Project 1'}
+    , {src: 'https://unsplash.it/400/302?random', alt: 'Project 2'}
+    , {src: 'https://unsplash.it/400/303random', alt: 'Project 3'}
+    , {src: 'https://unsplash.it/400/304?random', alt: 'Project 4'}
+    , {src: 'https://unsplash.it/400/305?random', alt: 'Project 5'}
+    , {src: 'https://unsplash.it/400/306?random', alt: 'Project 6'}
+    , {src: 'https://unsplash.it/400/307?random', alt: 'Project 7'}
+    , {src: 'https://unsplash.it/400/308?random', alt: 'Project 8'}
+    , {src: 'https://unsplash.it/400/309?random', alt: 'Project 9'}
+  ]
+};
+
+// Show Modal Image
+function onClick(element) {
+  document.getElementById("img").src = element.src;
+  document.getElementById("modal").style.display = "block";
+}
+/*..............gallerry...............*/
+/*.................................*/
+
+
 </script>
 
 </body>
